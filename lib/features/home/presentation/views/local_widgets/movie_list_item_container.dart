@@ -19,7 +19,9 @@ class MovieListItemContainer extends StatelessWidget {
             .push(AppRouter.kMovieDetailsScreenRouter, extra: movie);
       },
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 15, left: 30, right: 48),
+        padding: const EdgeInsets.only(
+          bottom: 15,
+        ),
         child: FittedBox(
           fit: BoxFit.scaleDown,
           child: SizedBox(
