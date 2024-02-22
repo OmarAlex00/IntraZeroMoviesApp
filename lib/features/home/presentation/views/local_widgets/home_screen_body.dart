@@ -22,7 +22,9 @@ class HomeScreenBody extends StatelessWidget {
             const SliverAppBar(
               backgroundColor: ConstantVars.kTextMainColor,
               pinned: true,
-              title: CustomAppBar(),
+              title: CustomAppBar(
+                isFavIcon: true,
+              ),
             ),
             const SliverToBoxAdapter(
               child: SizedBox(
@@ -48,6 +50,7 @@ class HomeScreenBody extends StatelessWidget {
               (context, index) {
                 return MovieListItemContainer(
                   movie: state.movies[index],
+                  fromFav: false,
                 );
               },
             )),

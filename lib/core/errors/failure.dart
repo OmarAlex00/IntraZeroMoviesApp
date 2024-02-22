@@ -27,7 +27,8 @@ class ServerFailure extends Failure {
         }
         return ServerFailure('Something went wrong!');
       default:
-        return ServerFailure('Something went wrong!');
+        return ServerFailure(
+            'Something went wrong! Kindly Check If you are connected to the network');
     }
   }
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {

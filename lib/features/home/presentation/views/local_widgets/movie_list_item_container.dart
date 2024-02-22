@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intrazeromovies/core/utils/app_router.dart';
 import 'package:intrazeromovies/core/widgets/movie_img.dart';
@@ -9,14 +10,20 @@ class MovieListItemContainer extends StatelessWidget {
   const MovieListItemContainer({
     super.key,
     required this.movie,
+    required this.fromFav,
   });
   final Movie movie;
+  final bool fromFav;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context)
-            .push(AppRouter.kMovieDetailsScreenRouter, extra: movie);
+        fromFav
+            ? GoRouter.of(context).pushReplacement(
+                AppRouter.kMovieDetailsScreenRouter,
+                extra: movie)
+            : GoRouter.of(context)
+                .push(AppRouter.kMovieDetailsScreenRouter, extra: movie);
       },
       child: Padding(
         padding: const EdgeInsets.only(

@@ -8,16 +8,12 @@ class ConstantVars {
   static const kTextMainColor = Colors.white;
   static const kLogoColor = Color(0xff2A4A75);
   static const String kSectraFont = 'GT Sectra Fine';
+  static const String kMoviesBox = 'kMoviesBox';
+  static const String kFavMoviesBox = 'kFavMoviesBox';
+
   static const Icon kRateIcon = Icon(
     Icons.star,
     color: Colors.yellow,
     size: 15,
   );
-}
-
-class ConstantsTags {
-  static const String kFeaturedTags = 'Featured';
-  static const String kBestSellerTags = 'BestSeller';
-  static const String kOthersTags = 'Others';
-  static const String kResults = 'Results';
 }

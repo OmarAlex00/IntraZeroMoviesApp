@@ -1,35 +1,55 @@
-class Movie {
-  bool? adult;
-  String? backdropPath;
-  List<dynamic>? genreIds;
-  int? id;
-  String? originalLanguage;
-  String? originalTitle;
-  String? overview;
-  double? popularity;
-  String? posterPath;
-  String? releaseDate;
-  String? title;
-  bool? video;
-  double? voteAverage;
-  int? voteCount;
+import 'package:hive/hive.dart';
+part 'movie.g.dart';
 
-  Movie({
-    this.adult,
-    this.backdropPath,
-    this.genreIds,
-    this.id,
-    this.originalLanguage,
-    this.originalTitle,
-    this.overview,
-    this.popularity,
-    this.posterPath,
-    this.releaseDate,
-    this.title,
-    this.video,
-    this.voteAverage,
-    this.voteCount,
-  });
+@HiveType(typeId: 0)
+class Movie {
+  @HiveField(0)
+  bool? adult;
+  @HiveField(1)
+  String? backdropPath;
+  @HiveField(2)
+  List<dynamic>? genreIds;
+  @HiveField(3)
+  int? id;
+  @HiveField(4)
+  String? originalLanguage;
+  @HiveField(5)
+  String? originalTitle;
+  @HiveField(6)
+  String? overview;
+  @HiveField(7)
+  double? popularity;
+  @HiveField(8)
+  String? posterPath;
+  @HiveField(9)
+  String? releaseDate;
+  @HiveField(10)
+  String? title;
+  @HiveField(11)
+  bool? video;
+  @HiveField(12)
+  double? voteAverage;
+  @HiveField(13)
+  int? voteCount;
+  @HiveField(14)
+  bool isFavorite;
+
+  Movie(
+      {this.adult,
+      this.backdropPath,
+      this.genreIds,
+      this.id,
+      this.originalLanguage,
+      this.originalTitle,
+      this.overview,
+      this.popularity,
+      this.posterPath,
+      this.releaseDate,
+      this.title,
+      this.video,
+      this.voteAverage,
+      this.voteCount,
+      this.isFavorite = false});
 
   factory Movie.fromJson(Map<String, dynamic> json) => Movie(
         adult: json['adult'] as bool?,

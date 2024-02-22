@@ -16,10 +16,11 @@ class ResultsListBuilder extends StatelessWidget {
       padding: const EdgeInsets.only(top: 5, bottom: 20),
       itemBuilder: (context, index) {
         return Padding(
-            padding: const EdgeInsets.only(
-              bottom: 15,
-            ),
-            child: MovieListItemContainer(movie: movies[index]));
+          padding: const EdgeInsets.only(
+            bottom: 15,
+          ),
+          child: MovieListItemContainer(movie: movies[index], fromFav: false),
+        );
       },
     );
   }

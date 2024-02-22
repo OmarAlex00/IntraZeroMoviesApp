@@ -18,10 +18,7 @@ class MovieImg extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: 1,
         child: movie.backdropPath == null
-            ? Image.asset(
-                Asset.kPlaceHolderImg,
-                fit: BoxFit.fill,
-              )
+            ? const Icon(Icons.error)
             : CachedNetworkImage(
                 imageUrl: '${ConstantVars.movieImagePath}${movie.backdropPath}',
                 fit: BoxFit.fill,
